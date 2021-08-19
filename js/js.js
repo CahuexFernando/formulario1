@@ -1,23 +1,27 @@
-var boton = document.getElementById("Enviar");
-var mensaje = document.getElementById("bienvenida");
+var boton = document.getElementById('Enviar');
 
-nombre=("nombre");
-fecha=("fecha");
 function calcular(){
-var nombre = document.getElementById("nombre").value;
-var fecha = document.getElementById("fecha").value;
 
-if (fecha <= 2003){
-    alert ('Hola señor '+nombre);
+var fecha = document.getElementById('fecha').value;
+var nombre = document.getElementById('nombre').value;
+var mensaje = document.getElementById('bienvenida');
+
+var respuestaNiño = "Hola niño "+ nombre
+var respuestaSeñor = "Hola señor "+ nombre
+
+if (fecha>=2003){
+   mensaje.textContent = respuestaNiño
 }
 else{
-    alert ('Hola niño '+nombre);
+    mensaje.textContent = respuestaSeñor
 }
-}
-function cajaTexto (){
-    mensaje.classList.remove('mensaje');
-    mensaje.classList.add('mensaje2');
 }
 
-boton.addEventListener('click',cajaTexto);
-boton.addEventListener('click',calcular);
+function cajaTexto (){
+
+mensaje.classList.add('mensaje');
+
+}
+
+boton.addEventListener('click', cajaTexto);
+boton.addEventListener('click', calcular);
